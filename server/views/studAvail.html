@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="schedulerApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script></script>
+
+</head>
+<body>
+    <h1>Weekly Availability</h1>
+    <div class="controller" ng-controller="studAvailController">
+        <form id="input-avail" ng-submit="addAvailSched()">
+            <label>Preferred # of hours: <input type="number" class="max-Hours" size="3" ng-model="maxHours" autofocus required></label><br>
+            <div class="avail-form-head1">Shifts:</div>
+            <div class="avail-form-head2">2nd Shift (optional)</div>
+            <div class="input-avial-mon">
+                <label><input type="checkbox" ng-model="mon-avail" value="Monday">MONDAY</label>
+                <input type="time" class="input-shift" ng-model="mon1start"> - <input type="time" class="input-shift" ng-model="mon1end">;
+                <input type="time" class="input-shift" ng-model="mon2start"> - <input type="time" class="input-shift" ng-model="mon2end">
+            </div>
+            <div class="input-avial-tue">
+                <label><input type="checkbox" ng-model="tue-avail" value="Tuesday">TUESDAY</label>
+                <input type="time" class="input-shift" ng-model="tue1start"> - <input type="time" class="input-shift" ng-model="tue1end">;
+                <input type="time" class="input-shift" ng-model="tue2start"> - <input type="time" class="input-shift" ng-model="tue2end">
+            </div>
+            <div class="input-avial-wed">
+                <label><input type="checkbox" ng-model="wed-avail" value="Wednesday">WEDNESDAY</label>
+                <input type="time" class="input-shift" ng-model="wed1start"> - <input type="time" class="input-shift" ng-model="wed1end">;
+                <input type="time" class="input-shift" ng-model="wed2start"> - <input type="time" class="input-shift" ng-model="wed2end">
+            </div>
+            <div class="input-avial-thu">
+                <label><input type="checkbox" ng-model="thu-avail" value="Thursday">THURSDAY</label>
+                <input type="time" class="input-shift" ng-model="thu1start"> - <input type="time" class="input-shift" ng-model="thu1end">;
+                <input type="time" class="input-shift" ng-model="thu2start"> - <input type="time" class="input-shift" ng-model="thu2end">
+            </div>
+            <div class="input-avial-fri">
+                <label><input type="checkbox" ng-model="fri-avail" value="Friday">FRIDAY</label>
+                <input type="time" class="input-shift" ng-model="fri1start"> - <input type="time" class="input-shift" ng-model="fri2end">;
+                <input type="time" class="input-shift" ng-model="fri2start"> - <input type="time" class="input-shift" ng-model="fri2end">
+            </div>
+            <button type="submit">SUBMIT HOURS</button>
+        </form>
+    </div>
+</body>
+</html>

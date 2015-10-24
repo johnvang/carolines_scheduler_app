@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="schedulerApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Caroline's Scheduler App</title>
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <script src="/vendors/angular/angular.min.js"></script>
+    <script src="/vendors/angular-route/angular-route.min.js"></script>
+    <script src="/assets/scripts/admin.js"></script>
+    <!--<script src="/assets/scripts/adminAvail.js"></script>-->
+    <!--<script src="/assets/scripts/adminChange.js"></script>-->
+    <!--<script src="/assets/scripts/adminReg.js"></script>-->
+    <!--<script src="/assets/scripts/adminSchedule.js"></script>-->
+    <!--<script src="/assets/scripts/adminHome.js"></script>-->
+    <base href="/admin">
+</head>
+<body>
+    <div #navcontainer>
+        <ul>
+            <li><a href="/admin">Admin Home</a></li>
+            <li><a href="/admin/avail">Availability</a></li>
+            <li><a href="/admin/change">Change Requests</a></li>
+            <li><a href="/admin/reg">Register Worker</a></li>
+            <li><a href="/admin/schedule">View Schedule</a></li>
+        </ul>
+    </div>
+
+<div id="main">
+    <ng-view>
+
+    </ng-view>
+</div>
+
+</body>
+
+</html>
