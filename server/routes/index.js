@@ -8,14 +8,19 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
-router.post('/', passport.authenticate('local', {failureRedirect: '/users/fail'}), function(req, res) {
+router.post('/', passport.authenticate('local', {failureRedirect: '/fail'}), function(req, res) {
   if (req.user.isAdmin) {
     res.redirect('/admin');
   } else {
-    res.redirect('/users/home');
+    res.redirect('/students');
   }
   //successRedirect:'/users/home',
   //failureRedirect: '/users/fail'
 });
+
+router.get('/fail', function(req, res){
+  console.log("failure");
+  res.send(":(");
+})
 
 module.exports = router;

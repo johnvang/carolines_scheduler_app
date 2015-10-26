@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1>Admin Change Requests View</h1>
-<p>{{content}}</p>
+<ul class="changes">
+    <li ng-repeat="change in changes track by $index">{{change.body}}</li>
+</ul>
 </body>
 </html>
+
+<!--{userService.getUser(change._creator).username}}-->

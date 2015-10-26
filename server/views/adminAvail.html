@@ -7,5 +7,8 @@
 <body>
 <h1>Admin Availability View</h1>
 <p>{{content}}</p>
+<ul class="users">
+    <li ng-repeat="user in users track by $index">{{user.username}}</li>
+</ul>
 </body>
 </html>

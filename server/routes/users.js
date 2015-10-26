@@ -1,37 +1,53 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var User = require('../models/user');
 
+//get all users
 router.get('/', function(req, res, next){
-  res.json(req.isAuthenticated());
+  if(!req.user || !req.user.isAdmin) { return res.send(401, 'Unauthorized'); }
+
+  User.find({}, function(err, users) {
+    res.json(users);
+  });
 });
 
-router.get('/avail', function(req, res, next){
-  if(!req.user) { return res.send(401, 'Unauthorized'); }
+router.post('/', function(req, res, next){
+  if(!req.user || !req.user.isAdmin) { return res.send(401, 'Unauthorized'); }
 
-  res.sendFile(path.join(__dirname, '../views/studAvail.html'));
+  User.create(req.body, function(err, user){
+    if(err){
+      console.log(err);
+      res.send(422, 'unable to create user');
+    } else {
+      res.json(user);
+    }
+  });
 });
 
-router.get('/change', function(req, res, next){
-  if(!req.user) { return res.send(401, 'Unauthorized'); }
+router.delete('/:id', function(req, res, next){
+  if(!req.user || !req.user.isAdmin) { return res.send(401, 'Unauthorized'); }
 
-  res.sendFile(path.join(__dirname, '../views/studChange.html'));
+  User.findOneAndRemove({_id: req.params.id}, function(err, user){
+    if(err){
+      console.log(err);
+      res.send(404, 'user not found');
+    } else {
+      res.json(user);
+    }
+  });
 });
 
-router.get('/home', function(req, res, next) {
-  if (!req.user) { return res.send(401, 'Unauthorized'); }
 
-  res.sendFile(path.join(__dirname, '../views/studHome.html'));
-});
 
-router.get('/subLanding', function(req, res, next){
-  if(!req.user) { return res.send(401, 'Unauthorized'); }
-
-  res.sendFile(path.join(__dirname, '../views/studSubLanding.html'));
-});
-
-router.get('/fail', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '../views/loginFail.html'))
-});
+//router.get('/subLanding', function(req, res, next){
+//  if(!req.user) { return res.send(401, 'Unauthorized'); }
+//
+//  res.sendFile(path.join(__dirname, '../views/studSubLanding.html'));
+//});
+//
+//router.get('/fail', function(req, res, next) {
+//  res.sendFile(path.join(__dirname, '../views/loginFail.html'))
+//});
 
 module.exports = router;

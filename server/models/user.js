@@ -6,7 +6,11 @@ var SALT_WORK_FACTOR = 10;
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
     password: {type: String, required: true},
-    isAdmin: {type: Boolean, default: false}
+    email: String,
+    isAdmin: {type: Boolean, default: false},
+    targetHours: Number,
+    hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }],
+    changeReq: [{type: Schema.Types.ObjectId, ref: 'Change'}]
 });
 
 UserSchema.pre('save', function(next){

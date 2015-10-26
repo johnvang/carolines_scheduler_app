@@ -12,8 +12,9 @@ var User = require('./server/models/user');
 
 var routes = require('./server/routes/index');
 var users = require('./server/routes/users');
-var register = require('./server/routes/register');
 var admin = require('./server/routes/admin');
+var students = require('./server/routes/students');
+var changes = require('./server/routes/changes');
 
 var app = express();
 
@@ -42,6 +43,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'server/public')));
 //Joins view requests to server/views
 app.use('/views', express.static(path.join(__dirname, 'server/views')));
+
+app.use(express.static(path.join(__dirname, 'server/public')));
+
 app.use(session({
   secret: 'secret',
   key: 'user',
@@ -86,9 +90,9 @@ passport.deserializeUser(function(id, callback){
 
 app.use('/', routes);
 app.use('/admin', admin);
+app.use('/students', students);
 app.use('/users', users);
-app.use('/register', register);
-
+app.use('/changes', changes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

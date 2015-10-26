@@ -12,8 +12,8 @@
         <p>Requests will be handled in the order that they are received.</p>
     </div>
     <div>
-        <form id="change-request" ng-submit="addChangeReq">
-            <textarea name="chageReqTextBox" cols="50" rows="7">Enter request...</textarea>
+        <form id="change-request" ng-submit="addChangeReq()">
+            <textarea ng-model="change.body" name="chageReqTextBox" cols="50" rows="7">Enter request...</textarea>
             <br/>
             <button type="submit">SUBMIT REQUEST</button>
         </form>
