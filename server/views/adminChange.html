@@ -7,7 +7,7 @@
 <body>
 <h1>Admin Change Requests View</h1>
 <ul class="changes">
-    <li ng-repeat="change in changes track by $index">{{change.body}}</li>
+    <li ng-repeat="change in changes track by $index">{{change.body}}<button ng-click="confirmDone(change)">Done</button></li>
 </ul>
 </body>
 </html>

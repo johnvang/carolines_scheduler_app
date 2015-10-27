@@ -9,8 +9,9 @@ var UserSchema = new Schema({
     email: String,
     isAdmin: {type: Boolean, default: false},
     targetHours: Number,
-    hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }],
-    changeReq: [{type: Schema.Types.ObjectId, ref: 'Change'}]
+    hoursAvail: Object
+    //hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }],
+    //changeReq: [{type: Schema.Types.ObjectId, ref: 'Change'}]
 });
 
 UserSchema.pre('save', function(next){

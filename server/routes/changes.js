@@ -29,12 +29,13 @@ router.post('/', function(req, res, next){
 });
 
 router.delete('/:id', function(req, res, next){
+    console.log('in change delete router');
     if(!req.user || !req.user.isAdmin) { return res.send(401, 'Unauthorized'); }
 
     Change.findOneAndRemove({_id: req.params.id}, function(err, change){
         if(err){
             console.log(err);
-            res.send(404, 'change request not found');
+            res.send(404, 'user not found');
         } else {
             res.json(change);
         }

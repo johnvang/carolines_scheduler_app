@@ -38,7 +38,22 @@ router.delete('/:id', function(req, res, next){
   });
 });
 
-
+router.put('/hoursAvail', function(req, res, next){
+  if(!req.user) { return res.send(401, 'Unauthorized'); }
+  var id = req.user._id;
+  console.log(id);
+  console.log(req.user);
+  console.log('in update router');
+  console.log(req.body);
+  User.findByIdAndUpdate(id, {hoursAvail: req.body.hoursAvail}, function(err, user){
+    if(err){
+      console.log(err);
+      res.send(404, 'user not found');
+    } else {
+      res.json(user);
+    }
+  })
+});
 
 //router.get('/subLanding', function(req, res, next){
 //  if(!req.user) { return res.send(401, 'Unauthorized'); }

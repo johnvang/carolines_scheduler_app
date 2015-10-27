@@ -46,10 +46,6 @@ app.factory('userService', ['$http', '$log', function($http, $log) {
             });
         },
 
-        clear: function () {
-
-        },
-
         getUsers: function() {
             var students = [];
             usersArray.forEach(function(user){
@@ -58,5 +54,6 @@ app.factory('userService', ['$http', '$log', function($http, $log) {
             });
             return students;
         }
+
     };
 }]);

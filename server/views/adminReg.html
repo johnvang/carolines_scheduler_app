@@ -6,26 +6,26 @@
 </head>
 
 <body>
-<h1>admin: register workers.</h1>
-<ul class="users">
-    <li ng-repeat="user in users track by $index">{{user.username}}, {{user.email}}<button ng-click="removeUser(user)">Delete</button></li>
-</ul>
-<form ng-submit="createStudent()">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" ng-model="student.username"/>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" ng-model="student.password"/>
-    </div>
-    <div>
-        <label for="email">E-mail:</label>
-        <input type="text" name="email" id="email" ng-model="student.email"/>
-    </div>
-    <div>
-        <input type="submit" value="Register"/>
-    </div>
-</form>
+    <h1>admin: register workers.</h1>
+    <ul class="users">
+        <li ng-repeat="user in users track by $index">{{user.username}}, {{user.email}}<button ng-click="confirmRemove(user)">Remove</button></li>
+    </ul>
+    <form ng-submit="createStudent()">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" ng-model="student.username"/>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" ng-model="student.password"/>
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" ng-model="student.email"/>
+        </div>
+        <div>
+            <input type="submit" value="Register"/>
+        </div>
+    </form>
 </body>
 </html>
