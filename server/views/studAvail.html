@@ -7,7 +7,44 @@
 <body>
     <h1>Weekly Availability</h1>
     <div class="controller" ng-controller="studAvailController">
-        <form id="input-hours">
+        <form ng-submit="addHours()">
+            <div>
+                <label>Preferred # of hours: <input type="number" class="max-Hours" size="3" ng-model="targetHours" autofocus required></label><br>
+            </div>
+            <div ng-repeat="available in hoursAvail">
+                <h3>{{available.day}}</h3>
+                <label>First Shift</label><input type="time" ng-model="available.first.start"><input type="time" ng-model="available.first.end">
+                <label>Second Shift (optional)</label><input type="time" ng-model="available.second.start"><input type="time" ng-model="available.second.end">
+            </div>
+            <div>
+                <button type="submit" >SUBMIT HOURS</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <form id="input-hours">
             <label>Preferred # of hours: <input type="number" class="max-Hours" size="3" ng-model="targetHours" autofocus required></label><br>
             <div class="avail-form-head1">Shifts:</div>
             <div class="avail-form-head2">2nd Shift (optional)</div>
@@ -37,7 +74,5 @@
                 <input type="time" class="input-shift" ng-model="fri2start"> - <input type="time" class="input-shift" ng-model="fri2end">
             </div>
             <button type="submit" ng-click="addHours(data)">SUBMIT HOURS</button>
-        </form>
-    </div>
-</body>
+        </form> -->
 </html>

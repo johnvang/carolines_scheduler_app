@@ -5,26 +5,29 @@
     <title></title>
 </head>
 
-<body>
-    <h1>admin: register workers.</h1>
-    <ul class="users">
-        <li ng-repeat="user in users track by $index">{{user.username}}, {{user.email}}<button ng-click="confirmRemove(user)">Remove</button></li>
-    </ul>
-    <form ng-submit="createStudent()">
-        <div>
-            <label for="username">Username:</label>
+<body id="admin-reg">
+    <h1 class="admin-reg-head">Register a new worker</h1>
+    <form id="admin-reg-form" ng-submit="createStudent()">
+        <div class="admin-reg-input">
+            <label for="username">Username (first.last):</label>
             <input type="text" name="username" id="username" ng-model="student.username"/>
         </div>
-        <div>
+        <div class="admin-reg-input">
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" ng-model="student.password"/>
         </div>
-        <div>
+        <div class="admin-reg-input">
             <label for="email">E-mail:</label>
             <input type="text" name="email" id="email" ng-model="student.email"/>
         </div>
-        <div>
+        <div class="admin-reg-input">
             <input type="submit" value="Register"/>
+        </div>
+        <div id="admin-reg-current">
+            <h2 class="admin-reg-current-head">Current:</h2>
+            <ul class="current users">
+                <li class="user" ng-repeat="user in users track by $index">{{user.username}}, {{user.email}}<button class="user-remove-button" ng-click="confirmRemove(user)">Remove</button></li>
+            </ul>
         </div>
     </form>
 </body>

@@ -2,22 +2,28 @@
 <html lang="en" ng-app="schedulerApp">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/styles/style.css">
     <title></title>
 </head>
 <body>
-<h1>User Login</h1>
-<form action="/" method="post">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username"/>
+    <div class="login-controller">
+        <h2>Log In</h2>
+        <form action="/" method="post">
+            <div class="login-input-field">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username"/>
+            </div>
+            <div class="login-input-field">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"/>
+            </div>
+<!--        <div class="login-fail-show" ng-show="invalidLogin()">
+                <p>Invalid Username and/or Password</p>
+            </div>-->
+            <div>
+                <input class="login-button" type="submit" value="Log In"/>
+            </div>
+        </form>
     </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password"/>
-    </div>
-    <div>
-        <input type="submit" value="Log In"/>
-    </div>
-</form>
 </body>
 </html>

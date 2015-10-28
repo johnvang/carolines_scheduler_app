@@ -2,10 +2,10 @@ var app = angular.module('schedulerApp', ['ngRoute']);
 
 app.config(function($routeProvider, $locationProvider){
     $routeProvider
-        .when('/admin',{
-            templateUrl: 'views/adminHome.html',
-            controller: 'adminHomeController'
-        })
+        //.when('/admin',{
+        //    templateUrl: 'views/adminHome.html',
+        //    controller: 'adminHomeController'
+        //})
         .when('/admin/avail',{
             templateUrl:'views/adminAvail.html',
             controller: 'adminAvailController'

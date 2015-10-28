@@ -1,5 +1,5 @@
-app.controller('adminHomeController', ['$scope', function($scope){
-
-    $scope.content = "placeholder for Home content";
-
-}]);
+//app.controller('adminHomeController', ['$scope', function($scope){
+//
+//    $scope.content = "placeholder for Home content";
+//
+//}]);

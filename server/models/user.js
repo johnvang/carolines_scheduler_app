@@ -6,11 +6,12 @@ var SALT_WORK_FACTOR = 10;
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
     password: {type: String, required: true},
-    email: String,
+    email: {type: String, required: true},
     isAdmin: {type: Boolean, default: false},
-    targetHours: Number,
-    hoursAvail: Object
-    //hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }],
+    targetHours: {type: Number, required: false},
+    hoursAvail: [{day: String, first: {start: Date, end: Date}, second: {start: Date, end: Date}}]
+
+    //hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }]
     //changeReq: [{type: Schema.Types.ObjectId, ref: 'Change'}]
 });
 
@@ -37,7 +38,7 @@ UserSchema.pre('save', function(next){
 
 UserSchema.methods.comparePassword = function(candidatePassword, callback){
     bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
-        if(err) return callbback(err);
+        if(err) return callback(err);
         callback(null, isMatch);
     });
 };

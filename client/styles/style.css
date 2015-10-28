@@ -3,6 +3,107 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.login-controller {
+  margin: 30px auto;
+  padding: 20px;
+  font-size:18px;
+  text-align: center;
+  border: 2px;
+  border-color:#5b5962;
+  box-shadow: 0px 0px 12px 0px #999999;
+  width: 160px;
+  background-color: #FFFCED;
 }
+
+.login-input-field {
+  margin: 10px;
+  text-align: center;
+  line-height: 1;
+}
+
+.login-button {
+  margin: 18px auto;
+  display: block
+}
+
+
+h1 {
+text-align: center;
+}
+
+ul {
+  padding: 3px;
+}
+
+li {
+  list-style: none;
+}
+
+#navcontainer li {
+  list-style: none;
+  display: inline;
+  margin: 3px 3px 3px 3px;
+  padding: 3px 6px 3px 6px;
+  position: relative;
+}
+
+#navcontainer a {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+#navcontainer {
+  width: 98%;
+  margin: 0px 0px 0px 0px;
+  padding: 6px 6px 4px 6px;
+  height: 40px;
+  line-height: 100%;
+  box-shadow: 0px 2px 3px #666666;
+  background: #3262A0;
+  border: solid 0px #525252;
+  position:relative;
+  z-index:999;
+}
+
+#navcontainer .active a, #navcontainer li:hover > a {
+  color: #24354B;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+.admin-reg-head {
+  margin: 50px auto;
+  text-align: center;
+}
+
+#admin-reg-form {
+  text-align: center;
+}
+
+.admin-reg-input {
+  display: inline-block;
+  margin: 7px;
+}
+
+#admin-reg-current {
+  width: 60%;
+  margin: 24px auto 0px auto;
+  overflow:auto
+  line-height: 100%;
+  border: solid 1px darkgray;
+  position: relative;
+  text-align: center;
+}
+
+.admin-reg-current-head {
+  width: 100%;
+  height: 30px;
+  background: #357DDA;
+  margin-top: 0px;
+  color: white;
+  border: solid 1px dimgray;
+  vertical-align: middle;
+}
+
+
