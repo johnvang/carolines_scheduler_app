@@ -2,10 +2,17 @@ app.controller('adminScheduleController', ['$scope', 'userService', function($sc
 
     $scope.userService = userService;
 
-    $scope.$watch('userService.getUsers()', function (users) {
+    var hasRegistered = false;
+    $scope.$watch('userService.getUsers()', function(users) {
         $scope.users = users;
+        if (hasRegistered) return;
+        hasRegistered = true;
+        $scope.$$postDigest(function(){
+            hasRegistered = false;
+            console.log($scope.users);
+        });
     }, true);
 
-    $scope.content = "placeholder for Schedule content";
+    console.log($scope.users);
 
 }]);

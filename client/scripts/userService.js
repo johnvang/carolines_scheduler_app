@@ -1,15 +1,14 @@
 /**
  * Created by johnvang on 10/25/15.
  */
-app.factory('userService', ['$http', '$log', function($http, $log) {
+app.factory('userService', ['$http', function($http) {
     var usersArray = [];
 
     //ajax request to get all students
     $http.get('/users', {withCredentials: true}).then(function(response) {
-    //$log.info(response.data);
         usersArray = response.data;
     }, function(err) {
-        $log.info(err);
+        console.log(err);
     });
 
     return {
@@ -20,12 +19,11 @@ app.factory('userService', ['$http', '$log', function($http, $log) {
                 password: attrs.password,
                 email: attrs.email
             }, {withCredentials: true}).then(function(response) {
-            //$log.info(response.data);
                 usersArray.push(response.data);
                 if (success != undefined)
                     success();
             }, function(err) {
-                $log.info(err);
+                console.log(err);
                 if (failure != undefined)
                     failure();
             });
@@ -40,7 +38,7 @@ app.factory('userService', ['$http', '$log', function($http, $log) {
                 if (success != undefined)
                     success();
             }, function (err) {
-                $log.info(err);
+                console.log(err);
                 if (failure != undefined)
                     failure();
             });
@@ -53,6 +51,7 @@ app.factory('userService', ['$http', '$log', function($http, $log) {
                 students.push(user);
             });
             return students;
+            console.log(students);
         }
 
     };

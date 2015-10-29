@@ -18,6 +18,7 @@ router.post('/', function(req, res, next){
     if(!req.user) { return res.send(401, 'Unauthorized'); }
     var attributes = req.body;
     attributes._creator = req.user._id;
+    attributes.username = req.user.username;
     Change.create(attributes, function(err, change){
         if(err){
             console.log(err);

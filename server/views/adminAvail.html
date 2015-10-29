@@ -5,10 +5,84 @@
     <title></title>
 </head>
 <body>
-<h1>Admin Availability View</h1>
-<p>{{content}}</p>
-<ul class="users">
-    <li ng-repeat="user in users track by $index">{{user.username}}</li>
-</ul>
+    <h1>Admin Availability View</h1>
+        <div>
+            <ul class="users">
+                <li ng-repeat="user in usersOnly track by $index">
+                    {{user.name}},
+                    target:{{user.targetHours}},
+                    <ul>
+                        <li ng-repeat="avail in user.shifts">
+                            {{avail.day}}: {{avail.firstStart}} - {{avail.firstEnd}}, {{avail.secondStart}} - {{avail.secondEnd}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    <table border="0" bgcolor="#eeeeee">
+        <thead bgcolor="#000000" style="color: #fff">
+        <tr>
+            <th width="100"></th>
+            <th width="100" ng-repeat="user in usersOnly track by $index">{{user.name}}</th>
+        </tr>
+        </thead>
+        <tr>
+            <th width="100">MONDAY</th>
+            <td width="100" ng-repeat="user in usersOnly track by $index">{{user.}}</td>
+
+
+        </tr>
+
+<!--        <tr>
+            <th width="100">9 Payments</th>
+            <td>$32.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td>$20.00</td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th width="100">6 Payments</th>
+            <td>$40.00</td>
+            <td>$22.00</td>
+            <td>No Payment</td>
+            <td>$22.00</td>
+            <td>No Payment</td>
+            <td>$22.00</td>
+            <td>No Payment</td>
+            <td>$22.00</td>
+            <td>No Payment</td>
+            <td>$18.00</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th width="100">4 Payments</th>
+            <td>$40.00</td>
+            <td>No Payment</td>
+            <td>$30.00</td>
+            <td>No Payment</td>
+            <td>$30.00</td>
+            <td>No Payment</td>
+            <td>$30.00</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <th width="100">Paid in Full</th>
+            <td colspan="11">$152.00 (saves up to $5.00 per month)</td>
+        </tr> -->
+    </table>
 </body>
 </html>

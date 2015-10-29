@@ -72,6 +72,12 @@ li {
   font-style: oblique;
 }
 
+#navcontainer a:active {
+  color: #24354B;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
 .admin-reg-head {
   margin: 50px auto;
   text-align: center;
@@ -104,6 +110,21 @@ li {
   color: white;
   border: solid 1px dimgray;
   vertical-align: middle;
+}
+
+
+
+
+
+table {
+  font-size: .9em;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+}
+td, th {
+  text-align: left;
+  padding: 10px 5px;
+  border: 1px solid #aaa;
 }
 
 

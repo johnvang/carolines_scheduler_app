@@ -51,7 +51,7 @@ app.use(session({
   key: 'user',
   resave: true,
   saveUninitialized: false,
-  cookie: {maxAge: 360000, secure: false}
+  cookie: {maxAge: 600000, secure: false}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -112,7 +112,7 @@ if (app.get('env') === 'development') {
     //  message: err.message,
     //  error: err
     //});
-    res.send(err.message);
+    res.send(error.messa);
   });
 }
 

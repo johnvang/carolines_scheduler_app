@@ -9,6 +9,7 @@ var Schema = mongoose.Schema;
 
 var ChangeSchema = new Schema({
     _creator : { type: Schema.Types.ObjectId, ref: 'User' },
+    username: String,
     body: String
 });
 

@@ -6,8 +6,6 @@ app.controller('adminRegController', ['$scope', 'userService', function($scope, 
         $scope.users = users;
     }, true);
 
-    $scope.content = "placeholder for Reg content";
-
     $scope.student = {};
 
     $scope.createStudent = function(){

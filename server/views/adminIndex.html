@@ -7,17 +7,12 @@
     <script src="/vendors/angular/angular.min.js"></script>
     <script src="/vendors/angular-route/angular-route.min.js"></script>
     <script src="/assets/scripts/admin.js"></script>
-    <!--<script src="/assets/scripts/adminAvail.js"></script>-->
-    <!--<script src="/assets/scripts/adminChange.js"></script>-->
-    <!--<script src="/assets/scripts/adminReg.js"></script>-->
-    <!--<script src="/assets/scripts/adminSchedule.js"></script>-->
-    <!--<script src="/assets/scripts/adminHome.js"></script>-->
+
     <base href="/admin">
 </head>
 <body>
     <div id="navcontainer">
         <ul>
- <!--           <li><a href="/admin">Admin Home</a></li> -->
             <li><a href="/admin/schedule">Schedule View</a></li>
             <li><a href="/admin/avail">Availabilities</a></li>
             <li><a href="/admin/change">Change Requests</a></li>
@@ -25,11 +20,11 @@
         </ul>
     </div>
 
-<div id="main">
-    <ng-view>
+    <div id="main">
+        <ng-view>
 
-    </ng-view>
-</div>
+        </ng-view>
+    </div>
 
 </body>
 

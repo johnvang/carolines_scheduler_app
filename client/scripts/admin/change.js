@@ -15,7 +15,6 @@ app.controller('adminChangeController', ['$scope', '$http', 'userService' , func
 
     $http.get('/changes', {withCredentials: true}).then(function(response) {
         $scope.changes = response.data;
-        console.log(response.data);
     }, function(err) {
         console.log(err);
     });

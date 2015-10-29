@@ -9,7 +9,8 @@ var UserSchema = new Schema({
     email: {type: String, required: true},
     isAdmin: {type: Boolean, default: false},
     targetHours: {type: Number, required: false},
-    hoursAvail: [{day: String, first: {start: Date, end: Date}, second: {start: Date, end: Date}}]
+    hoursAvail: [{day: String, first: {start: Date, end: Date}, second: {start: Date, end: Date}}],
+    shift: [{day: String, first: {start: Date, end: Date}, second: {start: Date, end: Date}}]
 
     //hoursAvail: [{ type: Schema.Types.ObjectId, ref: 'Availability' }]
     //changeReq: [{type: Schema.Types.ObjectId, ref: 'Change'}]
