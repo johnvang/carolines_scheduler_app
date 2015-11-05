@@ -9,7 +9,7 @@ app.controller("studChangeController", ['$scope', '$http', function($scope, $htt
         console.log($scope.change);
 
         $http.post('/changes', $scope.change, {withCredentials: true}).then(function(response){
-           alert("Your change request has been submitted.");
+           alert("Thank you! Your change request has been submitted.");
             $scope.change = {};
         }, function(err){
             console.log(err);

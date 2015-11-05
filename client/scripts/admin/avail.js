@@ -13,6 +13,7 @@ app.controller('adminAvailController', ['$scope', 'userService', function($scope
             hasRegistered = false;
             $scope.usersOnly = getAvail(users);
             console.log($scope.users);
+            console.log($scope.usersOnly);
         });
     }, true);
 

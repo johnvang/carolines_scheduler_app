@@ -6,22 +6,65 @@
 </head>
 <body>
     <h1>Weekly Availability</h1>
-    <div class="controller" ng-controller="studAvailController">
-        <form ng-submit="addHours()">
+    <div id="stud-avail">
+
+        <div>
+            <p>Please enter all times you are available to work.</p>
+        </div>
+        <div class="controller" ng-controller="studAvailController">
             <div>
                 <label>Preferred # of hours: <input type="number" class="max-Hours" size="3" ng-model="targetHours" autofocus required></label><br>
-            </div>
-            <div ng-repeat="available in hoursAvail">
-                <h3>{{available.day}}</h3>
-                <label>First Shift</label><input type="time" ng-model="available.first.start"><input type="time" ng-model="available.first.end">
-                <label>Second Shift (optional)</label><input type="time" ng-model="available.second.start"><input type="time" ng-model="available.second.end">
-            </div>
-            <div>
-                <button type="submit" >SUBMIT HOURS</button>
-            </div>
-        </form>
+            </div><br>
+            <form ng-submit="addHours()">
+                <table id="avail-input" border="0">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>first: start</th>
+                        <th></th>
+                        <th>first: end</th>
+                        <th></th>
+                        <th>second: start</th>
+                        <th></th>
+                        <th>second: end</th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="available in hoursAvail">
+                        <th class="avail-input-day">{{available.day}}</th>
+                        <td><input type="time" ng-model="available.first.start"></td>
+                        <td> - </td>
+                        <td><input type="time" ng-model="available.first.end"></td>
+                        <td> ; </td>
+                        <td><input type="time" ng-model="available.second.start"></td>
+                        <td> - </td>
+                        <td><input type="time" ng-model="available.second.end"></td>
+                    </tr>
+                </table>
+                <br><br>
+                <div>
+                    <button type="submit" >SUBMIT HOURS</button>
+                </div>
+            </form>
+        </div>
+
     </div>
+
+
+
+
 </body>
 
+<!--
+
+<div ng-repeat="available in hoursAvail">
+    <h3>{{available.day}}</h3>
+    <label>First Shift</label><input type="time" ng-model="available.first.start"><input type="time" ng-model="available.first.end">
+    <label>Second Shift (optional)</label><input type="time" ng-model="available.second.start"><input type="time" ng-model="available.second.end">
+</div>
+<div>
+    <button type="submit" >SUBMIT HOURS</button>
+</div>
+
+-->
 
 </html>

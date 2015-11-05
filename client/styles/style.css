@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: mintcream;
 }
 
 .login-controller {
@@ -39,6 +40,19 @@ li {
   list-style: none;
 }
 
+#navcontainer {
+  width: 98%;
+  margin: 0px 0px 0px 0px;
+  padding: 6px 6px 4px 6px;
+  height: 40px;
+  line-height: 100%;
+  box-shadow: 0px 2px 3px #666666;
+  background: #3262A0;
+  border: solid 0px #525252;
+  position:relative;
+  z-index:999;
+}
+
 #navcontainer li {
   list-style: none;
   display: inline;
@@ -53,29 +67,39 @@ li {
   color: white;
 }
 
-#navcontainer {
-  width: 98%;
-  margin: 0px 0px 0px 0px;
-  padding: 6px 6px 4px 6px;
-  height: 40px;
-  line-height: 100%;
-  box-shadow: 0px 2px 3px #666666;
-  background: #3262A0;
-  border: solid 0px #525252;
-  position:relative;
-  z-index:999;
-}
-
-#navcontainer .active a, #navcontainer li:hover > a {
+#navcontainer li:active {
   color: #24354B;
   text-decoration: underline;
   font-style: oblique;
 }
 
-#navcontainer a:active {
+#navcontainer :active a, #navcontainer li:hover > a {
   color: #24354B;
   text-decoration: underline;
   font-style: oblique;
+}
+
+#navcontainer .logout {
+  float: right;
+  list-style: none;
+  display: inline;
+  margin: 3px 3px 3px 3px;
+  padding: 3px 6px 3px 6px;
+  position: relative;
+}
+
+#navcontainer .logout a {
+  font-weight: bold;
+  font-size: 15px;
+  color: darkblue;
+}
+
+#admin-current-table {
+  margin: 32px auto;
+}
+
+.admin-current-head {
+  background: lightgreen;
 }
 
 .admin-reg-head {
@@ -85,6 +109,7 @@ li {
 
 #admin-reg-form {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .admin-reg-input {
@@ -94,7 +119,7 @@ li {
 
 #admin-reg-current {
   width: 60%;
-  margin: 24px auto 0px auto;
+  margin: 10px auto 0px auto;
   overflow:auto
   line-height: 100%;
   border: solid 1px darkgray;
@@ -112,19 +137,147 @@ li {
   vertical-align: middle;
 }
 
+.user-remove {
+  text-align: center;
+}
 
+#admin-changes-table {
+  width: 60%;
+  margin: 10px auto 0px auto;
+  overflow:auto
+  line-height: 100%;
+  border: solid 1px darkgray;
+  position: relative;
+  text-align: center;
+}
 
+.admin-changes-head {
+  width: 100%;
+  height: 30px;
+  background: #204A3F;
+  margin-top: 0px;
+  color: white;
+  border: solid 1px dimgray;
+  vertical-align: middle;
+}
 
+#avail-input table{
+  font-size: .9em;
+  font-family: Arial, sans-serif;
+}
 
-table {
+#avail-input td {
+  text-align: left;
+  padding: 10px 5px;
+}
+
+#avail-input th {
+  text-align: left;
+  padding: 10px 5px;
+  font-size: 14px;
+}
+
+#admin-avail, #admin-change, #admin-reg, table {
   font-size: .9em;
   font-family: Arial, sans-serif;
   border-collapse: collapse;
 }
-td, th {
+
+#admin-avail, #admin-change, #admin-reg, td {
   text-align: left;
   padding: 10px 5px;
-  border: 1px solid #aaa;
+  /*border: 1px solid #aaa;*/
 }
+
+#admin-avail, #admin-change, #admin-reg, th {
+  text-align: left;
+  padding: 10px 5px;
+  /*border: 1px solid #aaa;*/
+}
+
+#admin-schedule {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*students view*/
+#stud-index-nav {
+  width: 98%;
+  margin: 0px 0px 0px 0px;
+  padding: 6px 6px 4px 6px;
+  height: 40px;
+  line-height: 100%;
+  box-shadow: 0px 2px 3px #666666;
+  background: #A57225;
+  border: solid 0px #525252;
+  position:relative;
+  z-index:999;
+}
+
+#stud-index-nav li {
+  list-style: none;
+  display: inline;
+  margin: 3px 3px 3px 3px;
+  padding: 3px 6px 3px 6px;
+  position: relative;
+}
+
+#stud-index-nav a {
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+#stud-index-nav li:active {
+  color: #301E04;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+#stud-index-nav :active a, #stud-index-nav li:hover > a {
+  color: #301E04;
+  text-decoration: underline;
+  font-style: oblique;
+}
+
+#stud-index-nav .logout {
+  float: right;
+  list-style: none;
+  display: inline;
+  margin: 3px 3px 3px 3px;
+  padding: 3px 6px 3px 6px;
+  position: relative;
+}
+
+#stud-index-nav .logout a {
+  font-weight: bold;
+  font-size: 15px;
+  color: darkred;
+}
+
+#chang-reg-body {
+  margin-left: 25px;
+}
+
+#avail-input {
+  overflow: visible;
+}
+
+#site-header {
+  font-size: 44px;
+  color: maroon;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 2px 0 black;
+}
+
+#stud-avail {
+  text-align: center;
+}
+
+#avail-input {
+  margin: auto;
+}
+
 
 

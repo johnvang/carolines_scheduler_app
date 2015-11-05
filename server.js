@@ -93,6 +93,10 @@ app.use('/admin', admin);
 app.use('/students', students);
 app.use('/users', users);
 app.use('/changes', changes);
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

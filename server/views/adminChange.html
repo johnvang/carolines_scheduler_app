@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-    <h1>Admin Change Requests View</h1>
-    <ul class="changes">
-        <li ng-repeat="change in changes track by $index">{{change.username}}:  {{change.body}}   <button ng-click="confirmDone(change)">Done</button></li>
-    </ul>
+<body id="admin-changes">
+    <h1>Change Requests</h1>
+    <table id="admin-changes-table" border="1" bgcolor="#eeeeee">
+        <tr class="admin-changes-head">
+            <td>REQUESTOR</td>
+            <td>REQUEST</td>
+            <td>Delete</td>
+        </tr>
+        <tr ng-repeat="change in changes track by $index">
+            <td>
+                {{change.username}}
+            </td>
+            <td>
+                {{change.body}}
+            </td>
+            <td class="change-complete">
+                <button ng-click="confirmDone(change)">YES</button>
+            </td>
+        </tr>
+    </table>
+
 </body>
 </html>
 

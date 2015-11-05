@@ -5,7 +5,13 @@
     <title></title>
 </head>
 <body>
-    <h1>Admin Full Schedule View</h1>
+    <h1>Full Schedule View</h1>
 
+<form id="admin-schedule" ng-submit="generate()">
+    Weekly Hours of Operation:<br><br>
+    <label>Open: <input type="time" ng-model="open"></label>
+    <label>Close: <input type="time" ng-model="close"></label>
+    <button id="generate-button" type="submit">Generate</button>
+</form>
 </body>
 </html>
